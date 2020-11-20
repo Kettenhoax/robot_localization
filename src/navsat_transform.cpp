@@ -405,6 +405,7 @@ nav_msgs::msg::Odometry NavSatTransform::utmToMap(
   // position at that timestamp
   gps_odom.header.frame_id = world_frame_id_;
   gps_odom.header.stamp = gps_update_time_;
+  gps_odom.child_frame_id = base_link_frame_id_;
 
   // Now fill out the message. Set the orientation to the identity.
   tf2::toMsg(transformed_utm_gps, gps_odom.pose.pose);
